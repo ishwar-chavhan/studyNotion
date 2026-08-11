@@ -10,10 +10,12 @@ export default function CourseAccordionBar({ course, isActive, handleActive }) {
   const [active, setActive] = useState(false)
   useEffect(() => {
     setActive(isActive?.includes(course._id))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive])
   const [sectionHeight, setSectionHeight] = useState(0)
   useEffect(() => {
     setSectionHeight(active ? contentEl.current.scrollHeight : 0)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active])
 
   return (
