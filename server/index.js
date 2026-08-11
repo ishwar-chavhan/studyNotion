@@ -76,7 +76,7 @@ const paymentLimiter = rateLimit({
 // -------------------------------------------------------------------
 // Middlewares
 // -------------------------------------------------------------------
-app.use(helmet()); // Security headers
+app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } })); // Security headers
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
